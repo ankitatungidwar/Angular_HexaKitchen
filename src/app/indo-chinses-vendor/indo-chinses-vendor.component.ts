@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IndoChinsesVendorService } from './indo-chinses-vendor.service';
 
 @Component({
   selector: 'app-indo-chinses-vendor',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndoChinsesVendorComponent implements OnInit {
 
-  constructor() { }
+
+
+  indoVendor: IndoVendor[];
+  errorMsg: any;
+  editIndoItem: IndoVendor[];
+
+  constructor(public indoVendorService: IndoChinsesVendorService) { }
 
   ngOnInit() {
+    this.IndoChinsesVendorService.getIndoChinsesItems().subscribe(
+      data => this.indoVendor = data,
+      error => this.errorMsg = error
+    );
   }
 
 }
