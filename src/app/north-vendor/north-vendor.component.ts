@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NorthVendorService } from './north-vendor.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-north-vendor',
@@ -21,17 +22,40 @@ export class NorthVendorComponent implements OnInit {
     );
   }
 
-  // add(editNorthItem: NorthVendor){
-  //   this.northVendorService.addNorthIndianItem(this.editNorthItem).subscribe(    
-  //     northVendor => this.northVendors.push(northVendor),
-  //     error => this.errorMsg = error
-  //   );
-  // }
+  add(addForm: NgForm): void {
+    this.editNorthItem = undefined;
+    // name = name.trim();    
+    if (!addForm.value.name) {
+      return;
+    }
+
+    if (!addForm.value.price) {
+      return;
+    }
+
+    // The server will generate the id for this new North Indian Item
+    // const newNorthItem: NorthVendor = { name, price } as NorthVendor;
+    // this.northVendorService.addNorthIndianItem(newNorthItem)
+    //   .subscribe(north => {this.northVendors.push(north), console.log(north)},
+    //   error => this.errorMsg = error);
+        
+    this.northVendors.push(addForm.value);
+    console.log(this.northVendors);
+    alert("Menu Item: " + addForm.value.name + " Added!");  
+    addForm.resetForm();
+    
+      
+  }
 
   delete(northVendor: NorthVendor): void {
-    this.northVendors = this.northVendors.filter(n => n !== northVendor);
-    this.northVendorService.deleteNorthIndianItem(northVendor.id).subscribe();  
-    alert("Menu Item: " + northVendor.name + " Deleted!");   
+
+    if(confirm("Are you sure you want to Delete: " + northVendor.name + " ? "))
+    {      
+      this.northVendors = this.northVendors.filter(n => n !== northVendor);
+      this.northVendorService.deleteNorthIndianItem(northVendor.id).subscribe();  
+      alert("Menu Item: " + northVendor.name + " Deleted!");
+    }
+       
   }
   
 
@@ -53,8 +77,13 @@ export class NorthVendorComponent implements OnInit {
     }
   }
 
-  
-
-  
+  // search(searchTerm: string) {
+  //   this.editNorthItem = undefined;
+  //   if (searchTerm) {      
+  //     this.northVendorService.searchNorthIndianItem(searchTerm)        
+  //       .subscribe(northVendors => (this.northVendors = northVendors));
+        
+  //   }
+  // } 
 
 }

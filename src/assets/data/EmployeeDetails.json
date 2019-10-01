@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Rahil"
+      
+    },
+    {
+        "id": 2,
+        "name": "Rohit"
+       
+    },
+    {
+        "id" : 3,
+        "name": "Sonal"
+       
+    },
+    {
+        "id" : 4,
+        "name": "Ankita"
+    },
+    {
+        "id" : 5,
+        "name": "Amit"
+        
+    },
+    {
+        "id" : 6,
+        "name": "Uma"
+    },
+    {
+        "id" : 7,
+        "name": "Simran"
+    },
+    {
+        "id" : 8,
+        "name": "Khushi"
+    },
+    {
+        "id" : 9,
+        "name": "Daniel"
+    },
+    {
+        "id" : 10,
+        "name": "Cherry"
+    }
+]

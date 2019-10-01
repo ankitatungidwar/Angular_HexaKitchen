@@ -1,0 +1,51 @@
+<main role="main">
+
+        <section class="jumbotron text-center" >
+            <div class="container">
+                <h1 class="jumbotron-heading">Vendor's Details</h1>
+               
+                    <a href="#" class="btn btn-primary my-2">Add More Vendor</a>
+    
+               
+            </div>
+        </section>
+    
+        <div class="album py-5 bg-light">
+            <div class="container">
+              
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let n of vendorDetails">
+                        <div class="card mb-4 box-shadow">
+                                <img class="card-img-top"
+                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                                alt="Thumbnail [100%x225]" src="{{n.image}}" data-holder-rendered="true"
+                                style="height: 250px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <p class="card-text"><strong *ngIf="n!==editVendorDetails">{{n.name}}</strong>
+                                       
+                                </p>
+                                <p class="card-text"><strong *ngIf="n!==editVendorDetails">{{n.cuisine}}</strong>
+                                       
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <input *ngIf="n===editVendorDetails" [(ngModel)]="n.name" type="text" (blur)="update()"
+                                        (keyup.enter)="update()">
+                                    <input *ngIf="n===editVendorDetails" [(ngModel)]="n.price" type="text" (blur)="update()"
+                                        (keyup.enter)="update()">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-warning" title="Edit"
+                                            (click)="edit(n)">
+                                            Edit</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"
+                                            (click)="delete(n)">Delete</button>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+    
+    </main>

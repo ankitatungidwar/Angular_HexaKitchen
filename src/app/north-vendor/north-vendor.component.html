@@ -7,21 +7,85 @@
                 Jammu and Kashmir, Punjab, Chandigarh, Haryana, Himachal Pradesh, Rajasthan, Uttarakhand, Delhi, Uttar
                 Pradesh
                 and Bihar (Bhojpuri Cuisine) as well as central regions like Madhya Pradesh.</p>
-            <p>
-                <a href="#" class="btn btn-primary my-2">Add More Items</a>
-            </p>
+
+            <button type="button" class="btn btn-primary my-2" data-toggle="modal" data-target="#myModal">Add Item</button>
         </div>
     </section>
+
+    <!-- Add Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Menu Item</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form #userForm="ngForm" (submit)="add(userForm)">
+                        <div class="form-group">
+                            <label>Item Name: </label>
+                            <input type="text" required #itemName="ngModel" class="form-control" style="width:200px"
+                                ngModel name="name"
+                                [ngClass]="{ 'is-invalid': userForm.submitted && itemName.invalid }">
+                            <div *ngIf="userForm.submitted && itemName.invalid" class="invalid-feedback">
+                                <div *ngIf="itemName.errors.required">Item Name is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Item Price :</label>
+                            <input type="number" required #itemPrice="ngModel" class="form-control" style="width:200px"
+                                ngModel name="price"
+                                [ngClass]="{ 'is-invalid': userForm.submitted && itemPrice.invalid }">
+                            <div *ngIf="userForm.submitted && itemPrice.invalid" class="invalid-feedback">
+                                <div *ngIf="itemPrice.errors.required">Item Price is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- <img                                 
+                            class="card-img-top"
+                            data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                            alt="Thumbnail [100%x250]" data-holder-rendered="true"
+                            style="height: 250px; width: 100%; display: block;"                            
+                            class="form-control" #itemImage="ngModel" ngModel name="image" src="assets/images/Restaurant.jpg">   -->
+                            <input type="image" src="assets/images/Restaurant.jpg" class="card-img-top form-control"
+                                style="height: 250px; width: 100%; display: block;" #itemImage="ngModel" ngModel
+                                name="image">
+                        </div>
+                        <button type="submit" class="btn btn-success">Add Item</button>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row">
+                <!-- <div class="container">
+                            <div class="row">
+                                <form>
+                                    <input type="text" required #itemSearchName name="searchValue" class="form-control"
+                                    style="width:200px" [(ngModel)]="userForm."/>
+                                    &nbsp;
+                                    <button (click)="search(itemSearchName.value)" class="btn btn-primary my-2">
+                                        Search Item
+                                    </button>
+                                </form>
+                            </div>
+                    </div> -->
                 <div class="col-md-4" *ngFor="let n of northVendors">
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top"
-                            data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                            alt="Thumbnail [100%x225]" src="{{n.image}}" data-holder-rendered="true"
-                            style="height: 225px; width: 100%; display: block;">
+                            data-src="holder.js/100px250?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                            alt="Thumbnail [100%x250]" src="{{n.image}}" data-holder-rendered="true"
+                            style="height: 250px; width: 100%; display: block;">
                         <div class="card-body">
                             <p class="card-text"><strong *ngIf="n!==editNorthItem">{{n.name}}</strong><span
                                     style="float: right"><strong *ngIf="n!==editNorthItem">${{n.price}}</strong></span>
@@ -29,6 +93,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <input *ngIf="n===editNorthItem" [(ngModel)]="n.name" type="text" (blur)="update()"
                                     (keyup.enter)="update()">
+                                    
                                 <input *ngIf="n===editNorthItem" [(ngModel)]="n.price" type="text" (blur)="update()"
                                     (keyup.enter)="update()">
                                 <div class="btn-group">
@@ -36,7 +101,7 @@
                                         (click)="edit(n)">
                                         Edit</button>
                                     <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                                        (click)="delete(n)">Delete</button>                                        
+                                        (click)="delete(n)">Delete</button>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,49 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Employee's Details</h1>
+
+            <a href="#" class="btn btn-primary my-2">Add More Employee</a>
+
+
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container text-center">
+
+            <div class="row">
+                <div class="col-md-8 text-center" *ngFor="let n of employeeDetails">
+                    <table>
+                        <tr>
+                            <td style="width: 150px"><strong *ngIf="n!==editEmployeeDetails">{{n.id}}</strong></td>
+                            <td style="width: 150px"><strong *ngIf="n!==editEmployeeDetails">{{n.name}}</strong></td>
+
+
+                            <input *ngIf="n===editEmployeeDetails" [(ngModel)]="n.name" type="text" (blur)="update()"
+                                (keyup.enter)="update()">
+                            <input *ngIf="n===editEmployeeDetails" [(ngModel)]="n.price" type="text" (blur)="update()"
+                                (keyup.enter)="update()">
+                            <div class="btn-group">
+                                <td style="width: 150px"><button type="button" class="btn btn-sm btn-outline-warning"
+                                        title="Edit" (click)="edit(n)"> Edit</button></td>
+                                <td style="width: 30px"><button type="button" class="btn btn-sm btn-outline-danger"
+                                        title="Delete" (click)="delete(n)">Delete</button></td>
+
+                            </div>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</main>

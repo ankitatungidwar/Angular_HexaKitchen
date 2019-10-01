@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Ankita Tungidwar",
+        "cuisine": "Indo Chinese",
+        "image": "assets/images/chinese.gif"
+        
+    },
+    {         
+        "name": "Amit Kaul",
+        "cuisine": "North Indian",
+        "image": "assets/images/north.gif"
+    },
+    {
+        "name": "Rahil Hasnani",
+        "cuisine": "South Indian",
+        "image": "assets/images/south.gif"
+    }
+   
+]

@@ -57,7 +57,7 @@
         "id" : 10,
         "name": "Chicken Lollipop",
         "price": 11.00,
-        "image": "assets/images/ChickenLollipop.jpeg"
+        "image": "assets/images/ChickenLollipop.jpg"
     },
     {
         "id" : 11,
