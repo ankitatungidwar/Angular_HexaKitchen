@@ -2,17 +2,32 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">All Menu</h1>
-            <p class="lead text-muted">Indian Chinese cuisine or Sino-Indian cuisine is the adaptation of Chinese
+            <h1 class="jumbotron-heading">Menu</h1><br>
+            <p class="text-muted"><strong>Indian Chinese</strong> cuisine or <strong>Sino-Indian</strong> cuisine is the
+                adaptation of Chinese
                 seasoning and cooking techniques to Indian tastes through a larger offering to also include vegetarian
                 dishes.
                 The Indian-style Chinese cuisine is said to have been developed by the small Chinese community that has
                 lived in Kolkata for over a century.</p>
-            <!-- <p>
-                <a href="#" class="btn btn-primary my-2">Add More Items</a>
-
-            </p> -->
+            <p class="text-muted"><strong>North Indian</strong> cuisine is a form of cuisine, from the region of
+                Northern India which
+                include cuisines of
+                Jammu and Kashmir, Punjab, Chandigarh, Haryana, Himachal Pradesh, Rajasthan, Uttarakhand, Delhi, Uttar
+                Pradesh
+                and Bihar (Bhojpuri Cuisine) as well as central regions like Madhya Pradesh.</p>
+            <p class="text-muted">
+                <strong>South Indian</strong> cuisine includes the cuisines of the
+                five southern states of India—Andhra Pradesh, Karnataka, Kerala, Tamil Nadu
+                and Telangana—and the union territories of Lakshadweep, Pondicherry, and the
+                Andaman and Nicobar Islands.
+            </p>
         </div>
+
+        <a href="Employee#mycart">My cart</a>
+        <!-- <button type="reset" (click)="location.href='#myCart'">
+            My Cart</button> -->
+
+
     </section>
 
     <div class="album py-5 bg-light">
@@ -32,29 +47,42 @@
                             </p>
 
                             <div class="d-flex justify-content-between align-items-center">
-                                <input *ngIf="n===editSouthItem" [(ngModel)]="n.name" type="text" (blur)="update()"
-                                    (keyup.enter)="update()">
 
-                                <input *ngIf="n===editSouthItem" [(ngModel)]="n.price" type="number" (blur)="update()"
-                                    (keyup.enter)="update()">
+                                <button type="button" class="btn btn-sm btn-outline-primary" title="Add to Your Order"
+                                    (click)="details(n)">Add to Order</button>
 
-                                
-                                    <!-- <button type="button" class="btn btn-sm btn-outline-warning" title="Edit Menu Item"
-                                        (click)="edit(n)">
-                                        Edit</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Menu Item"
-                                        (click)="delete(n)">Delete</button>                                         -->
-                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Add to Your Order"
-                                        (click)="edit(n)">
-                                        Add to Order</button>
-                            
+                                <!-- <a [routerLink]="['/cart', { id:employeemenu.id }]">Buy Now</a>    -->
 
                             </div>
                         </div>
                     </div>
-                       
                 </div>
             </div>
+
+            <br>
+            <hr>
+
+            <section id="mycart" style="float: inline-end">
+                <h3>My Cart</h3>
+                <table style="width: 40%" class="table table-hover">
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                        <th>Remove</th>
+                    </tr>
+                    <tr *ngFor="let l of list" let result=0>
+                        <td>{{l.name}}</td>
+                        <td>${{l.price}}</td>
+                        <td><button class="btn btn-danger btn-sm" (click)="deleteItem(l)">x</button></td>
+                    </tr>
+                </table>
+                <br>
+                <h2>Total : ${{total}} </h2>
+
+                <button *ngIf="list.length >0" class=" btn btn-outline-primary btn-lg" (click)="deleteItem(l)">Checkout</button>
+
+            </section>
+
         </div>
     </div>
 </main>

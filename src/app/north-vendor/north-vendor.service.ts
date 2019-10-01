@@ -13,7 +13,7 @@ export class NorthVendorService {
 
   getNorthIndianItems(): Observable<NorthVendor[]> {   
     let url ="./assets/data/NorthIndian.json";        
-    return this.httpClient.get<NorthVendor[]>(url);    
+    return this.httpClient.get<NorthVendor[]>(url);   
   } 
 
   // addNorthIndianItem(northVendor: NorthVendor): Observable<NorthVendor> {

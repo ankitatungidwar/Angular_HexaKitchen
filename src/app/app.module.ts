@@ -15,11 +15,11 @@ import { SouthVendorComponent } from './south-vendor/south-vendor.component';
 import { IndoChinsesVendorComponent } from './indo-chinses-vendor/indo-chinses-vendor.component';
 import { NorthVendorComponent } from './north-vendor/north-vendor.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-   
+    HomeComponent,   
     AdminComponent,
     EmployeeComponent,
     HeaderComponent,
@@ -27,6 +27,7 @@ import { NorthVendorComponent } from './north-vendor/north-vendor.component';
     SouthVendorComponent,
     IndoChinsesVendorComponent,
     NorthVendorComponent
+    
   ],
   imports: [
     BrowserModule,

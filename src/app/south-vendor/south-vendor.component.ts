@@ -22,6 +22,7 @@ export class SouthVendorComponent implements OnInit {
     );
   }
 
+<<<<<<< Updated upstream
   add(addForm: NgForm): void {
     this.editSouthItem = undefined;
     // name = name.trim();    
@@ -48,6 +49,11 @@ export class SouthVendorComponent implements OnInit {
   delete(southVendor : SouthVendor) : void
   {
     if(confirm("Are you sure to delete "+ southVendor.name + "?")) {
+=======
+  delete(southVendor : SouthVendor) : void
+  {
+    if(confirm("Are you sure to delete "+southVendor.name + "?")) {
+>>>>>>> Stashed changes
 
     this.southVendors = this.southVendors.filter(s => s !== southVendor);
     this.southService.deleteSouthItem(southVendor.id).subscribe();

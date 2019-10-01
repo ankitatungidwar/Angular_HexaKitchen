@@ -14,43 +14,43 @@
     {
         "id" : 3,
         "name": "Butter Milk",
-        "price": 5.50,
+        "price": 5.00,
         "image": "assets/images/buttermilk.jpg"
     },
     {
         "id" : 4,
         "name": "Mango Lassi",
-        "price": 7.99,
+        "price": 7.00,
         "image": "assets/images/mango.jpg"
     },
     {
         "id" : 5,
         "name": "Vodka",
-        "price": 8.99,
+        "price": 8.00,
         "image": "assets/images/vodka.jpg"
     },
     {
         "id" : 6,
         "name": "Tea",
-        "price": 8.99,
+        "price": 8.00,
         "image": "assets/images/tea.jpg"
     },
     {
         "id" : 7,
         "name": "Frappe",
-        "price": 11.99,
+        "price": 11.00,
         "image": "assets/images/frappe.jfif"
     },
     {
         "id" : 8,
         "name": "Bubble Tea",
-        "price": 12.99,
+        "price": 12.00,
         "image": "assets/images/bubbletea.jpg"
     },
     {
         "id" : 9,
         "name": "GheeDosa",
-        "price": 10.99,
+        "price": 10.00,
         "image": "assets/images/GheeDosa.jpg"
     },
     {
@@ -62,13 +62,13 @@
     {
         "id" : 11,
         "name": "Chicken Biryani",
-        "price": 19.99,
+        "price": 19.00,
         "image": "assets/images/HyderabadiChickenBiryani.jpg"
     },
     {
         "id" : 12,
         "name": "South Indian Thali",
-        "price": 10.50,
+        "price": 10.00,
         "image": "assets/images/southindian.jpeg"
     },
     {
@@ -86,43 +86,43 @@
     {
         "id" : 15,
         "name": "Chicken Lollipop",
-        "price": 5.50,
+        "price": 5.00,
         "image": "assets/images/ChickenLollipop.jpg"
     },
     {
         "id" : 16,
         "name": "Idli",
-        "price": 7.99,
+        "price": 7.00,
         "image": "assets/images/idli.jpg"
     },
     {
         "id" : 17,
         "name": "Utthapam",
-        "price": 8.99,
+        "price": 8.00,
         "image": "assets/images/Uttapam.jpg"
     },
     {
         "id" : 18,
         "name": "Vada",
-        "price": 8.99,
+        "price": 8.00,
         "image": "assets/images/vada.jpg"
     },
     {
         "id" : 19,
         "name": "Gobi Cauliflower",
-        "price": 11.99,
+        "price": 11.00,
         "image": "assets/images/GobiCauliflower.jpg"
     },
     {
         "id" : 20,
         "name": "Puttu Kadala",
-        "price": 12.99,
+        "price": 12.00,
         "image": "assets/images/puttukadala.jpg"
     },
     {
         "id" : 21,
         "name": "Chinese Bhel",
-        "price": 10.99,
+        "price": 10.00,
         "image": "assets/images/ChineseBhel.jpg"
     },
     {
@@ -134,19 +134,19 @@
     {
         "id" : 23,
         "name": "Schezwan Rice",
-        "price": 19.99,
+        "price": 19.00,
         "image": "assets/images/SchezwanRice.jpg"
     },
     {
         "id" : 24,
         "name": "Tandoori Chicken",
-        "price": 10.50,
+        "price": 10.00,
         "image": "assets/images/Thandoori-Chicken.jpg"
     },
     {
         "id" : 25,
         "name": "Rasmalai",
-        "price": 10.99,
+        "price": 10.00,
         "image": "assets/images/rasmalai.jpg"
     },
     {
@@ -158,13 +158,13 @@
     {
         "id" : 27,
         "name": "Jalebi",
-        "price": 19.99,
+        "price": 19.00,
         "image": "assets/images/indian-jalebi.jpg"
     },
     {
         "id" : 28,
         "name": "Gulab Jamun",
-        "price": 10.50,
+        "price": 10.00,
         "image": "assets/images/gulabjamun.jpg"
     }
 ]
